@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Cadastro.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -14,7 +15,7 @@ class _LoginState extends State<Login> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-           // Image.asset('assets/logo.png', height: 40), // Adicione a logo na pasta assets
+            // Image.asset('assets/logo.png', height: 40), // Adicione a logo na pasta assets
             SizedBox(width: 10),
             Text(
               'Saude Mais',
@@ -65,6 +66,19 @@ class _LoginState extends State<Login> {
                 backgroundColor: Colors.green.shade400,
                 foregroundColor: Colors.white,  // Texto em branco
                 padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+              ),
+            ),
+            SizedBox(height: 20),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Cadastro()),
+                );
+              },
+              child: Text(
+                'Não tem uma conta? Cadastre-se',
+                style: TextStyle(color: Colors.green.shade700),
               ),
             ),
           ],
